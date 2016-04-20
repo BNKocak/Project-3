@@ -305,6 +305,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Application.Run(new Connection_to_database.Main());
+        Application.Run(new Connection_to_database.YearLbl1());
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Connection_to_database
 {
-    public partial class Main : Form
+    public partial class YearLbl1 : Form
     {
-        public Main()
+        public YearLbl1()
         {
             InitializeComponent();
         }
@@ -108,6 +108,11 @@ namespace Connection_to_database
             Value2.Visible = false;
             select.Visible = false;
             Search2.Visible = false;
+            LblYear1.Visible = false;
+            YearLbl2.Visible = false;
+            LblFrom.Visible = false;
+            LblPref.Visible = false;
+            PrefLbl.Visible = false;
             int selectedindex = StreetBox.SelectedIndex;
             if (selectedindex == 0 && ParkinglotTxt.Visible == false)
             {
@@ -116,6 +121,9 @@ namespace Connection_to_database
                 Value2.Visible = true;
                 select.Visible = true;
                 Search2.Visible = true;
+                LblYear1.Visible = true;
+                YearLbl2.Visible = true;
+                LblFrom.Visible = true;
                 select.Items.Add("and");
                 select.Items.Add("until");
 
@@ -138,6 +146,8 @@ namespace Connection_to_database
                 Search2.Visible = true;
                 Keuze1.Visible = true;
                 keuze3.Visible = true;
+                LblPref.Visible = true;
+                PrefLbl.Visible = true;
                 select.Visible = true;
                 Keuze1.Items.Add("Amount of services");
                 Keuze1.Items.Add("Amount of pay methods");
@@ -336,6 +346,7 @@ namespace Connection_to_database
             StreetBox.Visible = false;
             Search.Visible = false;
             ParkinglotTxt.Visible = false;
+            label2.Visible = true;
             if (ShowMap.Visible == true)
             {
                 pictureBox2.Visible = true;
@@ -358,7 +369,8 @@ namespace Connection_to_database
                 StreetBox.Visible = true;
                 Search.Visible = true;
                 pictureBox3.Visible = false;
-                pictureBox4.Visible = false;                
+                pictureBox4.Visible = false;
+                label2.Visible = false;
             }
         }
 
@@ -380,6 +392,16 @@ namespace Connection_to_database
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
         //private void textBox1_TextChanged_2(object sender, EventArgs e)
         //{
