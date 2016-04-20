@@ -8,18 +8,73 @@ namespace Connection_to_database
 {
     public class Querrys
     {
-        public string SelectQuerry(string voorwerp,string column, string voorwaarde1,string voorwaarde2,string voorwaarde3)
+        public string SelectQuerry(string voorwerp,string column, string voorwaarde1,string voorwaarde2,string voorwaarde3, string Amount1, string Amount2)
         {
             string query = "";
             if (voorwerp == "parkeergarage2")
             {
                 if (column == "ranking")
                 {
-                    if (voorwaarde1 != "")
+                    if (voorwaarde1 == "Amount of services")
                     {
-                        if (voorwaarde2 != "")
+                        if (voorwaarde2 == "Amount of pay methods")
                         {
                             query = "";
+                        }
+                        else if (voorwaarde2 == "Amount of parking places")
+                        {
+
+                        }
+                        else if (voorwaarde2 == "Opening hours")
+                        {
+
+                        }
+                    }
+                    else if (voorwaarde1 == "Amount of pay methods")
+                    {
+                        if (voorwaarde2 == "Amount of services")
+                        {
+
+                        }
+                        else if (voorwaarde2 == "Amount of parking places")
+                        {
+
+                        }
+                        else if (voorwaarde2 == "Opening hours")
+                        {
+
+                        }
+                    
+
+                    }
+                    else if (voorwaarde1 == "Amount of parking places")
+                    {
+                        if (voorwaarde2 == "Amount of services")
+                        {
+
+                        }
+                        else if (voorwaarde2 == "Amount of pay methods")
+                        {
+
+                        }
+                        else if(voorwaarde2 == "Opening hours")
+                        {
+
+                        }
+                    }
+                    else if (voorwaarde1 == "Opening hours")
+                    {
+                        if(voorwaarde2 == "Amount of services")
+                        {
+
+                        }
+                        else if (voorwaarde2 == "Amount of pay methods")
+                        {
+
+                        }
+                        else if (voorwaarde2 == "Amount of parking places")
+                        {
+
                         }
                     }
                 }

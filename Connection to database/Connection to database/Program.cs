@@ -142,10 +142,10 @@ namespace Connection_to_database
         }
 
         //Select statement
-        public List<string>[] Select(string voorwerp,string column ,string voorwaarde,string voorwaarde2, string voorwaarde3)
+        public List<string>[] Select(string voorwerp,string column ,string voorwaarde,string voorwaarde2, string voorwaarde3,string Amount1, string Amount2)
         {
             Querrys Select = new Querrys();
-            string query = Select.SelectQuerry(voorwerp,column,voorwaarde,voorwaarde2,voorwaarde3);
+            string query = Select.SelectQuerry(voorwerp,column,voorwaarde,voorwaarde2,voorwaarde3, Amount1, Amount2);
                 
             //Create a list to store the result
             List<string>[] list = new List<string>[8];
