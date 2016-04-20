@@ -97,6 +97,7 @@ namespace Connection_to_database
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             this.chart1.Series["Amount"].Points.Clear();
+            this.chart1.Series["Series2"].Points.Clear();
             select.Items.Clear();
             Keuze1.Items.Clear();
             keuze3.Items.Clear();
@@ -141,11 +142,11 @@ namespace Connection_to_database
                 Keuze1.Items.Add("Amount of services");
                 Keuze1.Items.Add("Amount of pay methods");
                 Keuze1.Items.Add("Amount of parking places");
-                Keuze1.Items.Add("Opening hours");
+                
                 keuze3.Items.Add("Amount of services");
                 keuze3.Items.Add("Amount of pay methods");
                 keuze3.Items.Add("Amount of parking places");
-                keuze3.Items.Add("Opening hours");
+                
                 select.Items.Add("and");
                 select.Items.Add("only");
             }
@@ -175,6 +176,7 @@ namespace Connection_to_database
         private void Search2_Click(object sender, EventArgs e)
         {
             this.chart1.Series["Amount"].Points.Clear();
+            this.chart1.Series["Series2"].Points.Clear();
             string dataset = "";
             if (ParkinglotTxt.Visible == true)
             {
@@ -189,17 +191,36 @@ namespace Connection_to_database
                         }
                         DBConnect Database = new DBConnect();
                         List<string>[] list = Database.Select(dataset, StreetBox.Text, Keuze1.Text, keuze3.Text, select.Text,Amount1.Text,Amount2.Text);
-                        int length = list[0].Count;
+                        int length = list[1].Count;
                         int count = 0;
                         if (list[0].Count != 0 && list[1].Count != 0)
                         {
                             this.chart1.Visible = true;
-                            while (length > count)
+                            if (select.Text == "and")
                             {
-                                var item1 = list[0].ElementAt(count);
-                                var item2 = list[1].ElementAt(count);
-                                this.chart1.Series["Amount"].Points.AddXY(item2, item1);
-                                count += 1;
+                                while (length > count)
+                                {
+                                    Console.WriteLine(count);
+                                    var item1 = list[0].ElementAt(count);
+                                    var item2 = list[1].ElementAt(count);
+                                    var item3 = list[2].ElementAt(count);
+                                    this.chart1.Series["Amount"].Points.AddXY(item2, item1);
+                                    this.chart1.Series["Series2"].Points.AddY(item3);
+                                    count += 1;
+                                }
+                            }
+                            else
+                            {
+                                while (length > count)
+                                {
+                                    Console.WriteLine(count);
+                                    var item1 = list[0].ElementAt(count);
+                                    var item2 = list[1].ElementAt(count);
+                                    
+                                    this.chart1.Series["Amount"].Points.AddXY(item2, item1);
+                                    
+                                    count += 1;
+                                }
                             }
                         }
                     }
@@ -254,7 +275,7 @@ namespace Connection_to_database
                 keuze3.Items.Clear();
                 keuze3.Items.Add("Amount of pay methods");
                 keuze3.Items.Add("Amount of parking places");
-                keuze3.Items.Add("Opening hours");
+                
             }
             if (selectedindex == "Amount of pay methods")
             {
@@ -263,22 +284,16 @@ namespace Connection_to_database
                 keuze3.Items.Clear();
                 keuze3.Items.Add("Amount of services");
                 keuze3.Items.Add("Amount of parking places");
-                keuze3.Items.Add("Opening hours");
+                
             }
             if(selectedindex == "Amount of parking places")
             {
                 keuze3.Items.Clear();
                 keuze3.Items.Add("Amount of services");
                 keuze3.Items.Add("Amount of pay methods");
-                keuze3.Items.Add("Opening hours");
+                
             }
-            if(selectedindex == "Opening hours")
-            {
-                keuze3.Items.Clear();
-                keuze3.Items.Add("Amount of services");
-                keuze3.Items.Add("Amount of pay methods");
-                keuze3.Items.Add("Amount of parking places");
-            }
+            
         }
 
         private void keuze3_SelectedIndexChanged(object sender, EventArgs e)
@@ -293,7 +308,7 @@ namespace Connection_to_database
                 Keuze1.Items.Clear();
                 Keuze1.Items.Add("Amount of pay methods");
                 Keuze1.Items.Add("Amount of parking places");
-                Keuze1.Items.Add("Opening hours");
+                
             }
             if (selectedindex == "Amount of pay methods")
             {
@@ -302,21 +317,14 @@ namespace Connection_to_database
                 Keuze1.Items.Clear();
                 Keuze1.Items.Add("Amount of services");
                 Keuze1.Items.Add("Amount of parking places");
-                Keuze1.Items.Add("Opening hours");
+               
             }
             if (selectedindex == "Amount of parking places")
             {
                 Keuze1.Items.Clear();
                 Keuze1.Items.Add("Amount of services");
                 Keuze1.Items.Add("Amount of pay methods");
-                Keuze1.Items.Add("Opening hours");
-            }
-            if (selectedindex == "Opening hours")
-            {
-                Keuze1.Items.Clear();
-                Keuze1.Items.Add("Amount of services");
-                Keuze1.Items.Add("Amount of pay methods");
-                Keuze1.Items.Add("Amount of parking places");
+                
             }
         }
 
