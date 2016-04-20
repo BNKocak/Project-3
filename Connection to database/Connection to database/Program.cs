@@ -31,7 +31,7 @@ namespace Connection_to_database
             server = "Localhost";
             database = "project3";
             uid = "root";
-            password = "Istanbul1453";
+            password = "123lol123";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -168,26 +168,81 @@ namespace Connection_to_database
                 //string datatxt = string.Empty;
 
                 //Read the data and store them in the list
-                if (voorwerp == "parkeergarage")
+                if (voorwerp == "parkeergarage2")
                 {
                     while (dataReader.Read())
                     {
+                        if (voorwaarde3 == "and")
+                        {
+                            if (voorwaarde == "Amount of services")
+                            {
+                                if (voorwaarde2 == "Amount of pay methods")
+                                {
+                                    list[0].Add(dataReader["Hoeveelheid_Diensten"] + "");
+                                    list[1].Add(dataReader["Naam"] + "");
+                                    list[2].Add(dataReader["Hoeveelheid_Betaalmogelijkheden"] + "");
+                                }
+                                else
+                                {
+                                    list[0].Add(dataReader["Hoeveelheid_Diensten"] + "");
+                                    list[1].Add(dataReader["Naam"] + "");
+                                    list[2].Add(dataReader["Capaciteit"] + "");
+                                }
 
-                        //data2text += dataReader.GetString("Naam");
-                        // data2text += " ";
-                        // data2text += dataReader.GetString("Locatie");
-                        // data2text += "\n";
-                        //Console.WriteLine(data2text);
-                        list[0].Add(dataReader["Naam"] + "");
-                        list[1].Add(dataReader["locatie"] + "");
-                        list[2].Add(dataReader["tarief"] + "");
-                        list[3].Add(dataReader["Openingstijden"] + "");
-                        list[4].Add(dataReader["Diensten"] + "");
-                        list[5].Add(dataReader["Gemengd/Openbaar"] + "");
-                        list[6].Add(dataReader["Betaalmogelijkheden"] + "");
-                        list[7].Add(dataReader["Capaciteit"] + "");
+                            }
+                            else if (voorwaarde == "Amount of pay methods")
+                            {
+                                if (voorwaarde2 == "Amount of services")
+                                {
+                                    list[0].Add(dataReader["Hoeveelheid_Betaalmogelijkheden"] + "");
+                                    list[1].Add(dataReader["Naam"] + "");
+                                    list[2].Add(dataReader["Hoeveelheid_Diensten"] + "");
+                                }
+                                else
+                                {
+                                    list[0].Add(dataReader["Hoeveelheid_Betaalmogelijkheden"] + "");
+                                    list[1].Add(dataReader["Naam"] + "");
+                                    list[2].Add(dataReader["Capaciteit"] + "");
+                                }
+                            }
+                            else if (voorwaarde == "Amount of parking places")
+                            {
+                                if (voorwaarde2 == "Amount of services")
+                                {
+                                    list[0].Add(dataReader["Capaciteit"] + "");
+                                    list[1].Add(dataReader["Naam"] + "");
+                                    list[2].Add(dataReader["Hoeveelheid_Diensten"] + "");
+                                }
+                                else
+                                {
+                                    list[0].Add(dataReader["Capaciteit"] + "");
+                                    list[1].Add(dataReader["Naam"] + "");
+                                    list[2].Add(dataReader["Hoeveelheid_Betaalmogelijkheden"] + "");
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            if (voorwaarde == "Amount of services")
+                            {
+                                list[0].Add(dataReader["Hoeveelheid_Diensten"] + "");
+                                list[1].Add(dataReader["Naam"] + "");
+                            }
+                            else if (voorwaarde == "Amount of pay methods")
+                            {
+                                list[0].Add(dataReader["Hoeveelheid_Betaalmogelijkheden"] + "");
+                                list[1].Add(dataReader["Naam"] + "");
+                            }
+                            else
+                            {
+                                list[0].Add(dataReader["Capaciteit"] + "");
+                                list[1].Add(dataReader["Naam"] + "");
+                            }
+                        }
                     }
                 }
+
                 else
                 {
                     while (dataReader.Read())
@@ -195,38 +250,18 @@ namespace Connection_to_database
                         list[0].Add(dataReader["Count(Bouwjaar)"] + "");
                         list[1].Add(dataReader["Bouwjaar"] + "");
                     }
+                } 
+
+                        dataReader.Close();
+                        this.CloseConnection();
+                    }
+                    //return list to be displayed
+                    return list;
                 }
-
-                //foreach (List<string>  lol in list)
-                //{
-                //    foreach (string derp in lol)
-
-                //    Console.WriteLine(derp);
-
-                //}
-                // Naam = list[0] -- locatie = list[1]
-
-
-                //close Data Reader
-                dataReader.Close();
-
                 
             
-                
-                    //Console.WriteLine(data2text);
-                    //Console.WriteLine(datatxt);
-                    //close Connection
-                
-                this.CloseConnection();
-                
-                //return list to be displayed
-                return list;
-            }
-            else
-            {
-                return list;
-            }
-        }
+        
+
 
         //Count statement
         public int Count()
