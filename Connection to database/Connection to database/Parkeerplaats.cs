@@ -32,7 +32,7 @@ namespace Connection_to_database
             }
 
             DBConnect Database = new DBConnect();
-            List<string>[] list = Database.Select(dataset, column, textBox2.Text,"","");
+            List<string>[] list = Database.Select(dataset, column, textBox2.Text,"","","","");
             foreach (List<string> lol in list)
             {
                 foreach (string derp in lol)
@@ -119,7 +119,7 @@ namespace Connection_to_database
                 select.Items.Add("until");
 
                 DBConnect Database = new DBConnect();
-                List<string>[] list = Database.Select("straat", "Bouwjaar", "","","");
+                List<string>[] list = Database.Select("straat", "Bouwjaar", "","","","","");
 
                 int length = list[0].Count;
                 int count = 0;
@@ -188,7 +188,7 @@ namespace Connection_to_database
                             keuze3.Text = "";
                         }
                         DBConnect Database = new DBConnect();
-                        List<string>[] list = Database.Select(dataset, StreetBox.Text, Keuze1.Text, keuze3.Text, select.Text);
+                        List<string>[] list = Database.Select(dataset, StreetBox.Text, Keuze1.Text, keuze3.Text, select.Text,Amount1.Text,Amount2.Text);
                         int length = list[0].Count;
                         int count = 0;
                         if (list[0].Count != 0 && list[1].Count != 0)
@@ -214,7 +214,7 @@ namespace Connection_to_database
                     if (Value1.Text != "" && Value2.Text != "" && select.Text != "")
                     {
                         DBConnect Database = new DBConnect();
-                        List<string>[] list = Database.Select(dataset, StreetBox.Text, Value1.Text, Value2.Text, select.Text);
+                        List<string>[] list = Database.Select(dataset, StreetBox.Text, Value1.Text, Value2.Text, select.Text,"","");
                         int length = list[0].Count;
                         int count = 0;
                         if (list[0].Count != 0 && list[1].Count != 0)
