@@ -161,8 +161,12 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
+<<<<<<< HEAD
             this.chart1.Location = new System.Drawing.Point(130, 332);
             this.chart1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+=======
+            this.chart1.Location = new System.Drawing.Point(87, 216);
+>>>>>>> origin/master
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
@@ -172,7 +176,11 @@
             series2.Name = "Series2";
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
+<<<<<<< HEAD
             this.chart1.Size = new System.Drawing.Size(1216, 580);
+=======
+            this.chart1.Size = new System.Drawing.Size(811, 377);
+>>>>>>> origin/master
             this.chart1.TabIndex = 10;
             this.chart1.Text = "chart1";
             this.chart1.Visible = false;
@@ -310,6 +318,7 @@
             this.pictureBox6.TabIndex = 27;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Visible = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox5
             // 
