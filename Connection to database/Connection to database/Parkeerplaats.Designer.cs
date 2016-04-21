@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Search = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.Streetnames = new System.Windows.Forms.Button();
@@ -51,15 +51,19 @@
             this.ShowMap = new System.Windows.Forms.Button();
             this.Close = new System.Windows.Forms.Button();
             this.Cap = new System.Windows.Forms.ComboBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // Search
@@ -138,20 +142,20 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(87, 216);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Amount";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series2";
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series9.ChartArea = "ChartArea1";
+            series9.Legend = "Legend1";
+            series9.Name = "Amount";
+            series10.ChartArea = "ChartArea1";
+            series10.Legend = "Legend1";
+            series10.Name = "Series2";
+            this.chart1.Series.Add(series9);
+            this.chart1.Series.Add(series10);
             this.chart1.Size = new System.Drawing.Size(811, 377);
             this.chart1.TabIndex = 10;
             this.chart1.Text = "chart1";
@@ -258,8 +262,10 @@
             // 
             this.Cap.FormattingEnabled = true;
             this.Cap.Items.AddRange(new object[] {
-            "Most Capacity",
-            "Lowst Capacity"});
+            "0-200",
+            "200-500",
+            "500-700",
+            "700 >"});
             this.Cap.Location = new System.Drawing.Point(1128, 173);
             this.Cap.Name = "Cap";
             this.Cap.Size = new System.Drawing.Size(121, 21);
@@ -267,12 +273,42 @@
             this.Cap.Visible = false;
             this.Cap.SelectedIndexChanged += new System.EventHandler(this.Cap_SelectedIndexChanged);
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Connection_to_database.Properties.Resources.wqe;
+            this.pictureBox6.Location = new System.Drawing.Point(3, 107);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(1361, 703);
+            this.pictureBox6.TabIndex = 27;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Visible = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Connection_to_database.Properties.Resources.dsaaw;
+            this.pictureBox5.Location = new System.Drawing.Point(3, 107);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(1284, 691);
+            this.pictureBox5.TabIndex = 26;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Visible = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Connection_to_database.Properties.Resources.weq;
+            this.pictureBox4.Location = new System.Drawing.Point(3, 107);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(1284, 691);
+            this.pictureBox4.TabIndex = 25;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Visible = false;
+            // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Connection_to_database.Properties.Resources.map2;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 124);
+            this.pictureBox3.Image = global::Connection_to_database.Properties.Resources.dsa;
+            this.pictureBox3.Location = new System.Drawing.Point(3, 107);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(556, 521);
+            this.pictureBox3.Size = new System.Drawing.Size(1284, 691);
             this.pictureBox3.TabIndex = 23;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Visible = false;
@@ -280,7 +316,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Connection_to_database.Properties.Resources.map;
-            this.pictureBox2.Location = new System.Drawing.Point(22, 317);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 107);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(1394, 510);
             this.pictureBox2.TabIndex = 21;
@@ -296,25 +332,16 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Connection_to_database.Properties.Resources.sdaw2;
-            this.pictureBox4.Location = new System.Drawing.Point(-9, 266);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(1394, 510);
-            this.pictureBox4.TabIndex = 25;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Visible = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1397, 629);
+            this.ClientSize = new System.Drawing.Size(1400, 919);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.Cap);
             this.Controls.Add(this.Close);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.StreetBox);
             this.Controls.Add(this.ParkinglotTxt);
@@ -338,10 +365,12 @@
             this.Name = "Main";
             this.Load += new System.EventHandler(this.Parkeerplaats_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +401,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ComboBox Cap;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }
