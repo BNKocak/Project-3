@@ -17,31 +17,7 @@ namespace Connection_to_database
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string dataset = "";
-            string column = StreetBox.Text;
-
-            if (ParkinglotTxt.Visible == true)
-            {
-                dataset = "parkeergarage2";
-            }
-            else
-            {
-                dataset = "straat";
-            }
-
-            DBConnect Database = new DBConnect();
-            List<string>[] list = Database.Select(dataset, column, textBox2.Text,"","","","");
-            foreach (List<string> lol in list)
-            {
-                foreach (string derp in lol)
-                {
-                    Console.WriteLine(derp);
-                }
-            }
-        }
-
+  
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
         }
@@ -60,18 +36,14 @@ namespace Connection_to_database
             pictureBox6.Visible = false;
             ParkinglotTxt.Visible = false;
             ShowMap.Visible = true;
-            Close.Visible = false;
+            CloseMap.Visible = false;
             Cap.Visible = false;
-            Streetname.Visible = true;
-            textBox2.Visible = true;
+            Streetname.Visible = true; 
             StreetBox.Visible = true;
-            Search.Visible = true;
             ParkinglotTxt.Visible = true;
             StreetBox.Items.Clear();
             StreetBox.Items.Add("Bouwjaar");
-            StreetBox.Items.Add("Bestaand");
-            StreetBox.Items.Add("Redenatie");
-            StreetBox.Items.Add("Naam");
+           
         }
 
         private void Parkeerplaats_Load(object sender, EventArgs e)
@@ -88,17 +60,16 @@ namespace Connection_to_database
             pictureBox6.Visible = false;
             ParkinglotTxt.Visible = true;
             ShowMap.Visible = true;
-            Close.Visible = false;
+            CloseMap.Visible = false;
             Cap.Visible = false;
             Streetname.Visible = true;
-            textBox2.Visible = true;
+            
             StreetBox.Visible = true;
-            Search.Visible = true;
+            
             ParkinglotTxt.Visible = true;
             StreetBox.Items.Clear();
-            StreetBox.Items.Add("Locatie");            
-            StreetBox.Items.Add("Diensten");
-            StreetBox.Items.Add("Capaciteit");
+                       
+            StreetBox.Items.Add("Services");
             StreetBox.Items.Add("Ranking");
         }
 
@@ -118,6 +89,7 @@ namespace Connection_to_database
         {
             this.chart1.Series["Amount"].Points.Clear();
             this.chart1.Series["Series2"].Points.Clear();
+            this.chart2.Series["Lift"].Points.Clear();
             select.Items.Clear();
             Keuze1.Items.Clear();
             keuze3.Items.Clear();
@@ -128,6 +100,8 @@ namespace Connection_to_database
             Value2.Visible = false;
             select.Visible = false;
             Search2.Visible = false;
+            keuze3.Enabled = true;
+            chart2.Visible = false;
             int selectedindex = StreetBox.SelectedIndex;
             if (selectedindex == 0 && ParkinglotTxt.Visible == false)
             {
@@ -152,7 +126,7 @@ namespace Connection_to_database
                     count += 1;
                 }
             }
-            if (selectedindex == 3 && ParkinglotTxt.Visible == true)
+            if (StreetBox.Text == "Ranking" && ParkinglotTxt.Visible == true)
                 {
                 this.chart1.Visible = true;
                 Search2.Visible = true;
@@ -167,6 +141,46 @@ namespace Connection_to_database
                 keuze3.Items.Add("Amount of parking places");                
                 select.Items.Add("and");
                 select.Items.Add("only");
+            }
+            if (selectedindex == 0 && ParkinglotTxt.Visible == true)
+            {
+                Search2.Visible = true;
+                Keuze1.Visible = true;
+                keuze3.Visible = true;
+                select.Visible = false;
+                chart2.Visible = true;  
+                DBConnect Database = new DBConnect();
+                List<string>[] list = Database.Select("parkeergarage2", "Naam" , "", "", "", "", "");
+                foreach (string derp in list[0])
+                {
+                    Keuze1.Items.Add(derp);
+                    keuze3.Items.Add(derp);
+                }
+                
+                List<string>[] list1  = Database.Select("parkeergarage3", "", "", "", "", "", "");
+
+                int length = list1[0].Count;
+                int count = 0;
+                while (length > count)
+                {
+                    var item1 = list1[0].ElementAt(count);
+                    var item2 = list1[1].ElementAt(count);
+                    var item3 = list1[2].ElementAt(count);
+                    var item4 = list1[3].ElementAt(count);
+                    var item5 = list1[4].ElementAt(count);
+                    var item6 = list1[5].ElementAt(count);
+                    var item7 = list1[6].ElementAt(count);
+                    this.chart2.Series["Lift"].Points.AddXY("Lift",item1);
+                    this.chart2.Series["Lift"].Points.AddXY("Camera",item2);
+                    this.chart2.Series["Lift"].Points.AddXY("Info-Punt",item3);
+                    this.chart2.Series["Lift"].Points.AddXY("Invalide",item4);
+                    this.chart2.Series["Lift"].Points.AddXY("E-Opladen",item5);
+                    this.chart2.Series["Lift"].Points.AddXY("GSM-dekking",item6);
+                    this.chart2.Series["Lift"].Points.AddXY("SnackAutomaat",item7);
+                    count += 1;
+                }
+
+
             }
         }
 
@@ -195,18 +209,18 @@ namespace Connection_to_database
         {
             this.chart1.Series["Amount"].Points.Clear();
             this.chart1.Series["Series2"].Points.Clear();
+            this.chart2.Series["Lift"].Points.Clear();
             string dataset = "";
             if (ParkinglotTxt.Visible == true)
             {
                 dataset = "parkeergarage2";
-                if (StreetBox.SelectedIndex == 3)
+                if (StreetBox.SelectedIndex == 1)
                 {
-                    if (Keuze1.SelectedIndex != -1 && keuze3.SelectedIndex != -1 || Keuze1.SelectedIndex != -1 && select.SelectedIndex == 1) ;
-                    {
                         if (keuze3.Enabled == false)
                         {
                             keuze3.Text = "";
                         }
+                        
                         DBConnect Database = new DBConnect();
                         List<string>[] list = Database.Select(dataset, StreetBox.Text, Keuze1.Text, keuze3.Text, select.Text,Amount1.Text,Amount2.Text);
                         int length = list[1].Count;
@@ -237,11 +251,33 @@ namespace Connection_to_database
                                     this.chart1.Series["Amount"].Points.AddXY(item2, item1);                                    
                                     count += 1;
                                 }
-                            }
+                            
                         }
                     }
                 }
-            }
+                else if(StreetBox.SelectedIndex == 0)
+                {
+                    
+                        DBConnect Database = new DBConnect();
+                        List<string>[] list = Database.Select("parkeergarage3", "", Keuze1.Text, keuze3.Text, "", "", "");
+                        int length = list[1].Count;
+                        int count = 0;
+                        this.chart2.Visible = true;
+                        while (length > count)
+                        {
+                            Console.WriteLine(count);
+                            var item1 = list[0].ElementAt(count);
+                            var item2 = list[1].ElementAt(count);
+                           
+                            this.chart2.Series["Lift"].Points.AddXY(item2, item1);
+                        
+                            count += 1;
+                        }     
+                  }
+             }
+                    
+                
+  
             else
             {
                 dataset = "straat";
@@ -290,7 +326,8 @@ namespace Connection_to_database
                 Amount1.Visible = true;
                 keuze3.Items.Clear();
                 keuze3.Items.Add("Amount of pay methods");
-                keuze3.Items.Add("Amount of parking places");             
+                keuze3.Items.Add("Amount of parking places");
+                     
             }
             if (selectedindex == "Amount of pay methods")
             {
@@ -341,14 +378,14 @@ namespace Connection_to_database
         {
             pictureBox2.Visible = false;
             Streetname.Visible = false;
-            textBox2.Visible = false;
+            
             StreetBox.Visible = false;
-            Search.Visible = false;
+            
             ParkinglotTxt.Visible = false;
             if (ShowMap.Visible == true)
             {
                 pictureBox2.Visible = true;
-                Close.Visible = true;
+                CloseMap.Visible = true;
                 Cap.Visible = true;                 
             }
         }
@@ -360,12 +397,12 @@ namespace Connection_to_database
                 Streetname.Visible = true;
                 ParkinglotTxt.Visible = true;
                 ShowMap.Visible = true;
-                Close.Visible = false;
+                CloseMap.Visible = false;
                 pictureBox2.Visible = false;
                 Cap.Visible = false;
-                textBox2.Visible = true;
+                
                 StreetBox.Visible = true;
-                Search.Visible = true;
+                
                 pictureBox3.Visible = false;
                 pictureBox4.Visible = false;
                 pictureBox5.Visible = false;
@@ -414,11 +451,11 @@ namespace Connection_to_database
         private void pictureBox6_Click(object sender, EventArgs e)
         {
         }
-        //private void textBox1_TextChanged_2(object sender, EventArgs e)
-        //{
-        //}
-        //private void button1_Click_2(object sender, EventArgs e)
-        //{
-        //}        
+
+        private void chart2_Click(object sender, EventArgs e)
+        {
+
+        }
+             
     }
 }

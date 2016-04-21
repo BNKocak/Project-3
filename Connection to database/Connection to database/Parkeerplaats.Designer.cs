@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.Search = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.Streetnames = new System.Windows.Forms.Button();
             this.Streetname = new System.Windows.Forms.Label();
             this.Parkinglot = new System.Windows.Forms.Button();
@@ -49,7 +50,7 @@
             this.Amount1 = new System.Windows.Forms.TextBox();
             this.Amount2 = new System.Windows.Forms.TextBox();
             this.ShowMap = new System.Windows.Forms.Button();
-            this.Close = new System.Windows.Forms.Button();
+            this.CloseMap = new System.Windows.Forms.Button();
             this.Cap = new System.Windows.Forms.ComboBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -57,6 +58,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -64,25 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Search
-            // 
-            this.Search.Location = new System.Drawing.Point(1028, 28);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(75, 23);
-            this.Search.TabIndex = 0;
-            this.Search.Text = "Search";
-            this.Search.UseVisualStyleBackColor = true;
-            this.Search.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(904, 30);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 20);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // Streetnames
             // 
@@ -130,11 +115,8 @@
             this.StreetBox.FormattingEnabled = true;
             this.StreetBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.StreetBox.Items.AddRange(new object[] {
-            "Bouwjaar",
-            "Bestaand",
-            "Redenatie",
-            "Naam"});
-            this.StreetBox.Location = new System.Drawing.Point(904, 56);
+            "Bouwjaar"});
+            this.StreetBox.Location = new System.Drawing.Point(904, 33);
             this.StreetBox.Name = "StreetBox";
             this.StreetBox.Size = new System.Drawing.Size(121, 21);
             this.StreetBox.TabIndex = 9;
@@ -142,20 +124,20 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(87, 216);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Amount";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series2";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Amount";
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series2";
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(811, 377);
             this.chart1.TabIndex = 10;
             this.chart1.Text = "chart1";
@@ -247,16 +229,16 @@
             this.ShowMap.UseVisualStyleBackColor = true;
             this.ShowMap.Click += new System.EventHandler(this.ShowMap_Click);
             // 
-            // Close
+            // CloseMap
             // 
-            this.Close.Location = new System.Drawing.Point(1128, 144);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(75, 23);
-            this.Close.TabIndex = 22;
-            this.Close.Text = "Close Map";
-            this.Close.UseVisualStyleBackColor = true;
-            this.Close.Visible = false;
-            this.Close.Click += new System.EventHandler(this.Close_Click);
+            this.CloseMap.Location = new System.Drawing.Point(1128, 144);
+            this.CloseMap.Name = "CloseMap";
+            this.CloseMap.Size = new System.Drawing.Size(75, 23);
+            this.CloseMap.TabIndex = 22;
+            this.CloseMap.Text = "Close Map";
+            this.CloseMap.UseVisualStyleBackColor = true;
+            this.CloseMap.Visible = false;
+            this.CloseMap.Click += new System.EventHandler(this.Close_Click);
             // 
             // Cap
             // 
@@ -276,7 +258,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::Connection_to_database.Properties.Resources.wqe;
-            this.pictureBox6.Location = new System.Drawing.Point(3, 107);
+            this.pictureBox6.Location = new System.Drawing.Point(-54, 107);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(1361, 703);
             this.pictureBox6.TabIndex = 27;
@@ -287,7 +269,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Connection_to_database.Properties.Resources.dsaaw;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 107);
+            this.pictureBox5.Location = new System.Drawing.Point(36, 269);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(1284, 691);
             this.pictureBox5.TabIndex = 26;
@@ -297,7 +279,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Connection_to_database.Properties.Resources.weq;
-            this.pictureBox4.Location = new System.Drawing.Point(3, 107);
+            this.pictureBox4.Location = new System.Drawing.Point(23, 107);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(1284, 691);
             this.pictureBox4.TabIndex = 25;
@@ -307,7 +289,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Connection_to_database.Properties.Resources.dsa;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 107);
+            this.pictureBox3.Location = new System.Drawing.Point(23, 107);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(1284, 691);
             this.pictureBox3.TabIndex = 23;
@@ -333,24 +315,42 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
+            // chart2
+            // 
+            chartArea6.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chart2.Legends.Add(legend6);
+            this.chart2.Location = new System.Drawing.Point(87, 216);
+            this.chart2.Name = "chart2";
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series9.Legend = "Legend1";
+            series9.Name = "Lift";
+            this.chart2.Series.Add(series9);
+            this.chart2.Size = new System.Drawing.Size(831, 422);
+            this.chart2.TabIndex = 28;
+            this.chart2.Text = "chart2";
+            this.chart2.Visible = false;
+            this.chart2.Click += new System.EventHandler(this.chart2_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1400, 919);
+            this.Controls.Add(this.chart2);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.Cap);
-            this.Controls.Add(this.Close);
+            this.Controls.Add(this.CloseMap);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.StreetBox);
             this.Controls.Add(this.ParkinglotTxt);
             this.Controls.Add(this.Parkinglot);
             this.Controls.Add(this.Streetname);
             this.Controls.Add(this.Streetnames);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.Search);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.pictureBox1);
@@ -372,15 +372,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Search;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button Streetnames;
         private System.Windows.Forms.Label Streetname;
         private System.Windows.Forms.Button Parkinglot;
@@ -398,11 +396,12 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button ShowMap;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button Close;
+        private System.Windows.Forms.Button CloseMap;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.ComboBox Cap;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
     }
 }

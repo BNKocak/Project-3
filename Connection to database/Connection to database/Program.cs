@@ -221,7 +221,7 @@ namespace Connection_to_database
                             }
 
                         }
-                        else
+                        else if(voorwaarde3 == "only")
                         {
                             if (voorwaarde == "Amount of services")
                             {
@@ -239,6 +239,34 @@ namespace Connection_to_database
                                 list[1].Add(dataReader["Naam"] + "");
                             }
                         }
+                        else
+                        {
+                            list[0].Add(dataReader["Naam"] + "");
+                        }
+                    }
+                }
+                else if (voorwerp == "parkeergarage3")
+                {
+                    if (voorwaarde != "")
+                    {
+                        while (dataReader.Read())
+                        {
+                            list[0].Add(dataReader["Hoeveelheid_Diensten"] + "");
+                            list[1].Add(dataReader["Naam"] + "");
+                        }   
+                    }
+                    else
+                    {
+                        while (dataReader.Read())
+                        {
+                            list[0].Add(dataReader["sum(Lift)"] + "");
+                            list[1].Add(dataReader["sum(Camera)"] + "");
+                            list[2].Add(dataReader["Sum(Info_Punt_)"] + "");
+                            list[3].Add(dataReader["Sum(Invalide_)"] + "");
+                            list[4].Add(dataReader["sum(E_Opladen)"] + "");
+                            list[5].Add(dataReader["sum(GSM_dekking)"] + "");
+                            list[6].Add(dataReader["sum(SnackAutomaat)"] + "");
+                        }
                     }
                 }
 
@@ -246,7 +274,8 @@ namespace Connection_to_database
                 {
                     while (dataReader.Read())
                     {
-                        list[0].Add(dataReader["Count(Bouwjaar)"] + "");
+                      
+                          list[0].Add(dataReader["Count(Bouwjaar)"] + "");
                         list[1].Add(dataReader["Bouwjaar"] + "");
                     }
                 } 
