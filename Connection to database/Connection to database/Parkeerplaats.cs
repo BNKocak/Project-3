@@ -64,6 +64,8 @@ namespace Connection_to_database
                 Value2.Visible = true;
                 select.Visible = true;
                 Search2.Visible = true;
+                YearLbl.Visible = true;
+                LblYear.Visible = true;
                 select.Items.Add("and");
                 select.Items.Add("until");
                 DBConnect Database = new DBConnect();
@@ -83,6 +85,14 @@ namespace Connection_to_database
                 Keuze1.Visible = true;
                 keuze3.Visible = true;
                 select.Visible = true;
+                YearLbl.Visible = false;
+                LblYear.Visible = false;
+                ServiceLbl.Visible = false;
+                LblService.Visible = false;
+                LblOption.Visible = true;
+                OptionLbl.Visible = true;
+                MethodeLbl.Visible = false;
+                LblMethode.Visible = false;
                 Keuze1.Items.Add("Amount of services");
                 Keuze1.Items.Add("Amount of pay methods");
                 Keuze1.Items.Add("Amount of parking places");
@@ -97,7 +107,15 @@ namespace Connection_to_database
                 Keuze1.Visible = true;
                 keuze3.Visible = true;
                 select.Visible = false;
-                chart2.Visible = true;  
+                chart2.Visible = true;
+                YearLbl.Visible = false;
+                LblYear.Visible = false;
+                ServiceLbl.Visible = true;
+                LblService.Visible = true;
+                LblOption.Visible = false;
+                OptionLbl.Visible = false;
+                MethodeLbl.Visible = false;
+                LblMethode.Visible = false;
                 DBConnect Database = new DBConnect();
                 List<string>[] list = Database.Select("parkeergarage2", "Naam" , "", "", "", "", "");
                 foreach (string derp in list[0])
@@ -131,6 +149,14 @@ namespace Connection_to_database
                 keuze3.Visible = true;
                 select.Visible = false;
                 chart2.Visible = true;
+                YearLbl.Visible = false;
+                LblYear.Visible = false;
+                ServiceLbl.Visible = false;
+                LblService.Visible = false;
+                LblOption.Visible = false;
+                OptionLbl.Visible = false;
+                MethodeLbl.Visible = true;
+                LblMethode.Visible = true;
                 DBConnect Database = new DBConnect();
                 List<string>[] list = Database.Select("parkeergarage2", "Naam", "", "", "", "", "");
                 foreach (string derp in list[0])
@@ -311,6 +337,11 @@ namespace Connection_to_database
             Map.Show();
         }
 
-        private void chart2_Click(object sender, EventArgs e){}            
+        private void chart2_Click(object sender, EventArgs e){}
+
+        private void MethodeLbl_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
