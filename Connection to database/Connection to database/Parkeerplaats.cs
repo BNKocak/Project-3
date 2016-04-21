@@ -54,9 +54,19 @@ namespace Connection_to_database
         {
             Streetname.Visible = true;
             pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
             ParkinglotTxt.Visible = false;
             ShowMap.Visible = true;
             Close.Visible = false;
+            Cap.Visible = false;
+            Streetname.Visible = true;
+            textBox2.Visible = true;
+            StreetBox.Visible = true;
+            Search.Visible = true;
+            ParkinglotTxt.Visible = true;
             StreetBox.Items.Clear();
             StreetBox.Items.Add("Bouwjaar");
             StreetBox.Items.Add("Bestaand");
@@ -72,9 +82,19 @@ namespace Connection_to_database
         {
             Streetname.Visible = false;
             pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
             ParkinglotTxt.Visible = true;
             ShowMap.Visible = true;
             Close.Visible = false;
+            Cap.Visible = false;
+            Streetname.Visible = true;
+            textBox2.Visible = true;
+            StreetBox.Visible = true;
+            Search.Visible = true;
+            ParkinglotTxt.Visible = true;
             StreetBox.Items.Clear();
             StreetBox.Items.Add("Locatie");            
             StreetBox.Items.Add("Diensten");
@@ -388,6 +408,10 @@ namespace Connection_to_database
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
         {
         }
         //private void textBox1_TextChanged_2(object sender, EventArgs e)
