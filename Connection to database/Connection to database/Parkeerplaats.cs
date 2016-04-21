@@ -54,10 +54,19 @@ namespace Connection_to_database
         {
             Streetname.Visible = true;
             pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
             ParkinglotTxt.Visible = false;
             ShowMap.Visible = true;
             Close.Visible = false;
-            ChooseLbl.Visible = true;
+            Cap.Visible = false;
+            Streetname.Visible = true;
+            textBox2.Visible = true;
+            StreetBox.Visible = true;
+            Search.Visible = true;
+            ParkinglotTxt.Visible = true;
             StreetBox.Items.Clear();
             StreetBox.Items.Add("Bouwjaar");
             StreetBox.Items.Add("Bestaand");
@@ -73,10 +82,19 @@ namespace Connection_to_database
         {
             Streetname.Visible = false;
             pictureBox2.Visible = false;
+            pictureBox3.Visible = false;
+            pictureBox4.Visible = false;
+            pictureBox5.Visible = false;
+            pictureBox6.Visible = false;
             ParkinglotTxt.Visible = true;
             ShowMap.Visible = true;
             Close.Visible = false;
-            ChooseLbl.Visible = true; 
+            Cap.Visible = false;
+            Streetname.Visible = true;
+            textBox2.Visible = true;
+            StreetBox.Visible = true;
+            Search.Visible = true;
+            ParkinglotTxt.Visible = true;
             StreetBox.Items.Clear();
             StreetBox.Items.Add("Locatie");            
             StreetBox.Items.Add("Diensten");
@@ -110,12 +128,6 @@ namespace Connection_to_database
             Value2.Visible = false;
             select.Visible = false;
             Search2.Visible = false;
-            YearLbl.Visible = true;
-            LblYear.Visible = true;
-            LblOption.Visible = false;
-            OptionLbl.Visible = false;
-            AmountLbl.Visible = false;
-            LblAmount.Visible = false;
             int selectedindex = StreetBox.SelectedIndex;
             if (selectedindex == 0 && ParkinglotTxt.Visible == false)
             {
@@ -147,12 +159,6 @@ namespace Connection_to_database
                 Keuze1.Visible = true;
                 keuze3.Visible = true;
                 select.Visible = true;
-                OptionLbl.Visible = true;
-                LblOption.Visible = true;
-                AmountLbl.Visible = false;
-                LblAmount.Visible = false;
-                YearLbl.Visible = false;
-                LblYear.Visible = false;
                 Keuze1.Items.Add("Amount of services");
                 Keuze1.Items.Add("Amount of pay methods");
                 Keuze1.Items.Add("Amount of parking places");
@@ -276,14 +282,12 @@ namespace Connection_to_database
         {
             Amount1.Visible = false;
             Amount1.Enabled = false;
-            LblAmount.Visible = false;
-
+            
             string selectedindex = Keuze1.SelectedItem.ToString();
             if (selectedindex == "Amount of services")
             {
                 Amount1.Enabled = true;
                 Amount1.Visible = true;
-                LblAmount.Visible = true;
                 keuze3.Items.Clear();
                 keuze3.Items.Add("Amount of pay methods");
                 keuze3.Items.Add("Amount of parking places");             
@@ -292,7 +296,6 @@ namespace Connection_to_database
             {
                 Amount1.Enabled = true;
                 Amount1.Visible = true;
-                LblAmount.Visible = true;
                 keuze3.Items.Clear();
                 keuze3.Items.Add("Amount of services");
                 keuze3.Items.Add("Amount of parking places");             
@@ -309,14 +312,11 @@ namespace Connection_to_database
         {
             Amount2.Visible = false;
             Amount2.Enabled = false;
-            AmountLbl.Visible = false;
-
             string selectedindex = keuze3.SelectedItem.ToString();
             if (selectedindex == "Amount of services")
             {
                 Amount2.Enabled = true;
                 Amount2.Visible = true;
-                AmountLbl.Visible = true;
                 Keuze1.Items.Clear();
                 Keuze1.Items.Add("Amount of pay methods");
                 Keuze1.Items.Add("Amount of parking places");                
@@ -325,7 +325,6 @@ namespace Connection_to_database
             {
                 Amount2.Enabled = true;
                 Amount2.Visible = true;
-                AmountLbl.Visible = true;
                 Keuze1.Items.Clear();
                 Keuze1.Items.Add("Amount of services");
                 Keuze1.Items.Add("Amount of parking places");              
@@ -346,14 +345,6 @@ namespace Connection_to_database
             StreetBox.Visible = false;
             Search.Visible = false;
             ParkinglotTxt.Visible = false;
-            ChooseLbl.Visible = false;
-            YearLbl.Visible = false;
-            LblYear.Visible = false;
-            LblOption.Visible = false;
-            OptionLbl.Visible = false;
-            AmountLbl.Visible = false;
-            LblAmount.Visible = false;
-            ChooseLabel.Visible = true;
             if (ShowMap.Visible == true)
             {
                 pictureBox2.Visible = true;
@@ -379,14 +370,6 @@ namespace Connection_to_database
                 pictureBox4.Visible = false;
                 pictureBox5.Visible = false;
                 pictureBox6.Visible = false;
-                ChooseLbl.Visible = true;
-                ChooseLabel.Visible = false;
-                YearLbl.Visible = true;
-                LblYear.Visible = true;
-                LblOption.Visible = true;
-                OptionLbl.Visible = true;
-                AmountLbl.Visible = true;
-                LblAmount.Visible = true;
             }
         }
 
@@ -428,19 +411,8 @@ namespace Connection_to_database
         {
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void pictureBox6_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LblAmount_Click(object sender, EventArgs e)
-        {
-
         }
         //private void textBox1_TextChanged_2(object sender, EventArgs e)
         //{
