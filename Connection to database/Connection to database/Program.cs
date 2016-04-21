@@ -249,23 +249,49 @@ namespace Connection_to_database
                 {
                     if (voorwaarde != "")
                     {
-                        while (dataReader.Read())
+                        if (Amount2 == "Hoeveelheid_Diensten")
                         {
-                            list[0].Add(dataReader["Hoeveelheid_Diensten"] + "");
-                            list[1].Add(dataReader["Naam"] + "");
-                        }   
+                            while (dataReader.Read())
+                            {
+                                list[0].Add(dataReader["Hoeveelheid_Diensten"] + "");
+                                list[1].Add(dataReader["Naam"] + "");
+                            }
+                        }
+                        else
+                        {
+                            while (dataReader.Read())
+                            {
+                                list[0].Add(dataReader["Hoeveelheid_Betaalmogelijkheden"] + "");
+                                list[1].Add(dataReader["Naam"] + "");
+                            }
+                        }
                     }
                     else
                     {
-                        while (dataReader.Read())
+                        if (Amount2 == "Hoeveelheid_Diensten")
                         {
-                            list[0].Add(dataReader["sum(Lift)"] + "");
-                            list[1].Add(dataReader["sum(Camera)"] + "");
-                            list[2].Add(dataReader["Sum(Info_Punt_)"] + "");
-                            list[3].Add(dataReader["Sum(Invalide_)"] + "");
-                            list[4].Add(dataReader["sum(E_Opladen)"] + "");
-                            list[5].Add(dataReader["sum(GSM_dekking)"] + "");
-                            list[6].Add(dataReader["sum(SnackAutomaat)"] + "");
+                            while (dataReader.Read())
+                            {
+                                list[0].Add(dataReader["sum(Lift)"] + "");
+                                list[1].Add(dataReader["sum(Camera)"] + "");
+                                list[2].Add(dataReader["Sum(Info_Punt_)"] + "");
+                                list[3].Add(dataReader["Sum(Invalide_)"] + "");
+                                list[4].Add(dataReader["sum(E_Opladen)"] + "");
+                                list[5].Add(dataReader["sum(GSM_dekking)"] + "");
+                                list[6].Add(dataReader["sum(SnackAutomaat)"] + "");
+                            }
+                        }
+                        else
+                        {
+                            while (dataReader.Read())
+                            {
+                                list[0].Add(dataReader["sum(Contant)"] + "");
+                                list[1].Add(dataReader["sum(Pin)"] + "");
+                                list[2].Add(dataReader["Sum(Master)"] + "");
+                                list[3].Add(dataReader["Sum(Maestro)"] + "");
+                                list[4].Add(dataReader["sum(American_Express)"] + "");
+                                list[5].Add(dataReader["sum(Visa)"] + "");
+                            }
                         }
                     }
                 }
