@@ -87,10 +87,8 @@ namespace Connection_to_database
                     {
                         query = "Select Naam, Hoeveelheid_Diensten from parkeergarage2 where Naam like  '" + voorwaarde1 + "' or Naam like '" + voorwaarde2 + "' group by Naam";
                     }
-                    else
-                    {
-                        query = "Select Naam, Hoeveelheid_Betaalmogelijkheden from parkeergarage2 where Naam like  '" + voorwaarde1 + "' or Naam like '" + voorwaarde2 + "' group by Naam";
-                    }
+                    else { query = "Select Naam, Hoeveelheid_Betaalmogelijkheden from parkeergarage2 where Naam like  '" + voorwaarde1 + "' or Naam like '" + voorwaarde2 + "' group by Naam"; }
+                    
                 }
                 else
                 {
@@ -98,10 +96,8 @@ namespace Connection_to_database
                     {
                         query = "Select sum(Lift), sum(Camera), Sum(Info_Punt_),Sum(Invalide_), sum(E_Opladen), sum(GSM_dekking),sum(SnackAutomaat) from parkeergarage3";
                     }
-                    else
-                    {
-                        query = "Select sum(Contant),sum(Pin), sum(Master), sum(Maestro), sum(American_Express), sum(Visa) from parkeergarage3";
-                    }
+                    else { query = "Select sum(Contant), sum(Pin), Sum(Master),Sum(Maestro), sum(American_Express),sum(Visa) from parkeergarage3"; }
+                    
                 }
             }
             else
