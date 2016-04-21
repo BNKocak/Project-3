@@ -12,7 +12,7 @@ namespace Connection_to_database
     {   public Main() { InitializeComponent(); }  
         private void textBox1_TextChanged(object sender, EventArgs e) {}
         private void textBox2_TextChanged(object sender, EventArgs e){}
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // here we switch from parking lot to streets so its easy to find options of parkinglot
         {Streetname.Visible = true;
             this.chart2.Visible = false;
             ParkinglotTxt.Visible = false;
@@ -25,7 +25,7 @@ namespace Connection_to_database
         }
 
         private void Parkeerplaats_Load(object sender, EventArgs e){}
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e) // here we switch from streets to parking lot so its easy to find options of parkinglot
         {   Streetname.Visible = false;
             ParkinglotTxt.Visible = true;
             ShowMap.Visible = true;
@@ -41,7 +41,7 @@ namespace Connection_to_database
         private void textBox1_TextChanged_1(object sender, EventArgs e){}
         private void Streetname_Click(object sender, EventArgs e){}
         private void ParkinglotTxt_Click(object sender, EventArgs e){}
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e) // here you select a option so you the programm know what kind of data it needs from the database
         {   this.chart1.Series["Amount of Streets"].Points.Clear();
             this.chart1.Series["Amount of Pay Methods"].Points.Clear();
             this.chart1.Series["Amount of Services"].Points.Clear();
@@ -159,14 +159,14 @@ namespace Connection_to_database
         }
 
         private void chart1_Click(object sender, EventArgs e){}
-        private void Select_SelectedIndexChanged(object sender, EventArgs e)
+        private void Select_SelectedIndexChanged(object sender, EventArgs e) // here we disable the options in the second bar because we dont want to use information of this bar
         {   if (select.SelectedItem.ToString() == "only") {keuze3.Enabled = false;}
             else { keuze3.Enabled = true; }
         }
 
         private void Value1_TextChanged(object sender, EventArgs e){}
         private void Value2_TextChanged(object sender, EventArgs e){}
-        private void Search2_Click(object sender, EventArgs e)
+        private void Search2_Click(object sender, EventArgs e) // here we look what every value is so we can get the informatie from the database with the accompaning graphs
         {   this.chart1.Series["Amount of Streets"].Points.Clear();
             this.chart1.Series["Amount of Pay Methods"].Points.Clear();
             this.chart1.Series["Amount of Services"].Points.Clear();
@@ -278,7 +278,7 @@ namespace Connection_to_database
             }
         }
 
-        private void Keuze1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Keuze1_SelectedIndexChanged(object sender, EventArgs e) // here we provide an extra bar for the prefrencens of the user
         {   Amount1.Visible = false;
             Amount1.Enabled = false;           
             string selectedindex = Keuze1.SelectedItem.ToString();
@@ -292,7 +292,7 @@ namespace Connection_to_database
             }        
         }
 
-        private void keuze3_SelectedIndexChanged(object sender, EventArgs e)
+        private void keuze3_SelectedIndexChanged(object sender, EventArgs e)  // here we provide an second extra bar for the prefrences of the user
         {   Amount2.Visible = false;
             Amount2.Enabled = false;
             string selectedindex = keuze3.SelectedItem.ToString();
@@ -306,7 +306,7 @@ namespace Connection_to_database
             }
         }
 
-        private void ShowMap_Click(object sender, EventArgs e)
+        private void ShowMap_Click(object sender, EventArgs e) // here we show the map with the capacity
         { Form1 Map = new Form1();
             Map.Show();
         }
