@@ -30,7 +30,7 @@ namespace Connection_to_database
             server = "Localhost";
             database = "project3";
             uid = "root";
-            password = "123lol123";
+            password = "Istanbul1453";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -81,62 +81,6 @@ namespace Connection_to_database
             {
                 System.Console.WriteLine(ex.Message);
                 return false;
-            }
-        }
-
-
-        //Insert statement
-        public void Insert()
-        {
-            string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
-
-            //open connection
-            if (this.OpenConnection() == true)
-            {
-                //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-
-                //Execute command
-                cmd.ExecuteNonQuery();
-
-                //close connection
-                this.CloseConnection();
-            }
-        }
-
-        public void Update()
-        {
-            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
-
-            //Open connection
-            if (this.OpenConnection() == true)
-            {
-                //create mysql command
-                MySqlCommand cmd = new MySqlCommand();
-                //Assign the query using CommandText
-                cmd.CommandText = query;
-                //Assign the connection using Connection
-                cmd.Connection = connection;
-
-                //Execute query
-                cmd.ExecuteNonQuery();
-
-                //close connection
-                this.CloseConnection();
-            }
-        }
-
-
-        //Delete statement
-        public void Delete()
-        {
-            string query = "DELETE FROM tableinfo WHERE name='John Smith'";
-
-            if (this.OpenConnection() == true)
-            {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.ExecuteNonQuery();
-                this.CloseConnection();
             }
         }
 
@@ -265,6 +209,7 @@ namespace Connection_to_database
                                 list[1].Add(dataReader["Naam"] + "");
                             }
                         }
+                         
                     }
                     else
                     {
@@ -293,65 +238,24 @@ namespace Connection_to_database
                                 list[5].Add(dataReader["sum(Visa)"] + "");
                             }
                         }
+                        
                     }
                 }
 
                 else
                 {
                     while (dataReader.Read())
-                    {
-                      
+                    {                      
                           list[0].Add(dataReader["Count(Bouwjaar)"] + "");
                         list[1].Add(dataReader["Bouwjaar"] + "");
                     }
                 } 
-
                         dataReader.Close();
                         this.CloseConnection();
                     }
                     //return list to be displayed
                     return list;
                 }
-                
-            
-        
-
-
-        //Count statement
-        public int Count()
-        {
-            string query = "SELECT Count(*) FROM tableinfo";
-            int Count = -1;
-
-            //Open Connection
-            if (this.OpenConnection() == true)
-            {
-                //Create Mysql Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-
-                //ExecuteScalar will return one value
-                Count = int.Parse(cmd.ExecuteScalar() + "");
-
-                //close Connection
-                this.CloseConnection();
-
-                return Count;
-            }
-            else
-            {
-                return Count;
-            }
-        }
-
-        //Backup
-        public void Backup()
-        {
-        }
-
-        //Restore
-        public void Restore()
-        {
-        }
     }
 }
 
