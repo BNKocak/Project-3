@@ -30,7 +30,7 @@ namespace Connection_to_database
             server = "Localhost";
             database = "project3";
             uid = "root";
-            password = "Istanbul1453";
+            password = "123lol123";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
