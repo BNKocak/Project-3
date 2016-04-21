@@ -8,7 +8,7 @@ namespace Connection_to_database
 {
     public class Querrys
     {
-        public string SelectQuerry(string voorwerp,string column, string voorwaarde1,string voorwaarde2,string voorwaarde3, string Amount1, string Amount2)
+        public string SelectQuerry(string voorwerp,string column, string voorwaarde1,string voorwaarde2,string voorwaarde3, string Amount1, string Amount2) // here we select the query that is needed to make the graphs
         {
             string query = "";
             if (voorwerp == "parkeergarage2")

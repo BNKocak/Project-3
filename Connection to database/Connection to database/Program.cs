@@ -107,10 +107,9 @@ namespace Connection_to_database
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 //Create a data reader and Execute the command
                 MySqlDataReader dataReader = cmd.ExecuteReader();
-                //string data2text = string.Empty;
-                //string datatxt = string.Empty;
+                
 
-                //Read the data and store them in the list
+                //Read the data  of the selected items and store them in the list
                 if (voorwerp == "parkeergarage2")
                 {
                     while (dataReader.Read())

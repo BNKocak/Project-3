@@ -24,7 +24,7 @@ namespace Connection_to_database
         {            
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) // here we select which picture is needed to be displayed
         {
             int selectedindex = Cap.SelectedIndex; 
             if (selectedindex == 0)
@@ -60,6 +60,6 @@ namespace Connection_to_database
                 pictureBox6.Visible = true;
             }
         }
-        private void CloseMap_Click(object sender, EventArgs e) { if (CloseMap.Visible == true) { this.Close();} }
+        private void CloseMap_Click(object sender, EventArgs e) { if (CloseMap.Visible == true) { this.Close();} } // this close the map
     }
 }
