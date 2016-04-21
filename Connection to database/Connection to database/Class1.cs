@@ -17,6 +17,7 @@ namespace Connection_to_database
                 {
                     if (voorwaarde3 == "and")
                     {
+                        
                         if (voorwaarde1 == "Amount of services")
                         {
                             if (voorwaarde2 == "Amount of pay methods")
@@ -72,8 +73,24 @@ namespace Connection_to_database
                     }
 
                 }
+                
+                else
+                {
+                    query = "Select Naam from parkeergarage2";
                 }
-            if(voorwerp == "straat")
+                }
+            else if( voorwerp == "parkeergarage3")
+            {
+                if (voorwaarde1 != "")
+                {
+                    query = "Select Naam, Hoeveelheid_Diensten from parkeergarage2 where Naam like  '"+ voorwaarde1 + "' or Naam like '"+ voorwaarde2 + "' group by Naam";
+                }
+                else
+                {
+                    query = "Select sum(Lift), sum(Camera), Sum(Info_Punt_),Sum(Invalide_), sum(E_Opladen), sum(GSM_dekking),sum(SnackAutomaat) from parkeergarage3";
+                }
+            }
+            else
             {
                 
                 if (column == "Bouwjaar")

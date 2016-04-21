@@ -1,45 +1,10 @@
-C:\Users\morris\Documents\Project 3\Connection to database\Connection to database\bin\Debug\Connection to database.exe.config
-C:\Users\morris\Documents\Project 3\Connection to database\Connection to database\bin\Debug\Connection to database.exe
-C:\Users\morris\Documents\Project 3\Connection to database\Connection to database\bin\Debug\Connection to database.pdb
-C:\Users\morris\Documents\Project 3\Connection to database\Connection to database\obj\Debug\Connection to database.csprojResolveAssemblyReference.cache
-C:\Users\morris\Documents\Project 3\Connection to database\Connection to database\obj\Debug\Connection to database.exe
-C:\Users\morris\Documents\Project 3\Connection to database\Connection to database\obj\Debug\Connection to database.pdb
-C:\Users\morris\Documents\Project 3\Connection to database\Connection to database\bin\Debug\MySql.Data.dll
-C:\Users\morris\Documents\Project 3\Connection to database\Connection to database\obj\Debug\Connection to database.csproj.GenerateResource.Cache
-C:\Users\morris\Documents\Project 3\Connection to database\Connection to database\obj\Debug\Connection_to_database.Main.resources
-C:\Users\Burhan\Desktop\Connection to database\Connection to database\bin\Debug\Connection to database.exe.config
-C:\Users\Burhan\Desktop\Connection to database\Connection to database\obj\Debug\Connection to database.exe
-C:\Users\Burhan\Desktop\Connection to database\Connection to database\obj\Debug\Connection to database.pdb
-C:\Users\Burhan\Desktop\Connection to database\Connection to database\bin\Debug\Connection to database.exe
-C:\Users\Burhan\Desktop\Connection to database\Connection to database\bin\Debug\Connection to database.pdb
-C:\Users\Burhan\Desktop\Connection to database\Connection to database\bin\Debug\MySql.Data.dll
-C:\Users\Burhan\Desktop\Connection to database\Connection to database\obj\Debug\Connection to database.csprojResolveAssemblyReference.cache
-C:\Users\Burhan\Desktop\Connection to database\Connection to database\obj\Debug\Connection_to_database.Main.resources
-C:\Users\Burhan\Desktop\Connection to database\Connection to database\obj\Debug\Connection to database.csproj.GenerateResource.Cache
-C:\Users\Burhan\Desktop\Connection to database\Connection to database\obj\Debug\Connection_to_database.Properties.Resources.resources
 C:\Users\morris\Documents\GitHub\Project-3\Connection to database\Connection to database\bin\Debug\Connection to database.exe.config
 C:\Users\morris\Documents\GitHub\Project-3\Connection to database\Connection to database\bin\Debug\Connection to database.exe
 C:\Users\morris\Documents\GitHub\Project-3\Connection to database\Connection to database\bin\Debug\Connection to database.pdb
 C:\Users\morris\Documents\GitHub\Project-3\Connection to database\Connection to database\bin\Debug\MySql.Data.dll
-C:\Users\morris\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.csprojResolveAssemblyReference.cache
 C:\Users\morris\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection_to_database.Main.resources
 C:\Users\morris\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection_to_database.Properties.Resources.resources
 C:\Users\morris\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.csproj.GenerateResource.Cache
 C:\Users\morris\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.exe
 C:\Users\morris\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.pdb
-C:\Users\Burhan\Documents\GitHub\Project-3\Connection to database\Connection to database\bin\Debug\Connection to database.exe.config
-C:\Users\Burhan\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.exe
-C:\Users\Burhan\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.pdb
-C:\Users\Burhan\Documents\GitHub\Project-3\Connection to database\Connection to database\bin\Debug\Connection to database.exe
-C:\Users\Burhan\Documents\GitHub\Project-3\Connection to database\Connection to database\bin\Debug\Connection to database.pdb
-C:\Users\Burhan\Documents\GitHub\Project-3\Connection to database\Connection to database\bin\Debug\MySql.Data.dll
-C:\Users\Burhan\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.csprojResolveAssemblyReference.cache
-C:\Users\Burhan\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection_to_database.Main.resources
-C:\Users\Burhan\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection_to_database.Properties.Resources.resources
-C:\Users\Burhan\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.csproj.GenerateResource.Cache
-C:\Users\ziggy\Documents\GitHub\Project-3\Connection to database\Connection to database\bin\Debug\Connection to database.exe.config
-C:\Users\ziggy\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.exe
-C:\Users\ziggy\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.pdb
-C:\Users\User\Documents\GitHub\Project-3\Connection to database\Connection to database\bin\Debug\Connection to database.exe.config
-C:\Users\User\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.exe
-C:\Users\User\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.pdb
+C:\Users\morris\Documents\GitHub\Project-3\Connection to database\Connection to database\obj\Debug\Connection to database.csprojResolveAssemblyReference.cache
