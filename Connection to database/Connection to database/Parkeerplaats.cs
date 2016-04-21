@@ -142,11 +142,9 @@ namespace Connection_to_database
                 Keuze1.Items.Add("Amount of services");
                 Keuze1.Items.Add("Amount of pay methods");
                 Keuze1.Items.Add("Amount of parking places");
-                
                 keuze3.Items.Add("Amount of services");
                 keuze3.Items.Add("Amount of pay methods");
-                keuze3.Items.Add("Amount of parking places");
-                
+                keuze3.Items.Add("Amount of parking places");                
                 select.Items.Add("and");
                 select.Items.Add("only");
             }
@@ -215,10 +213,8 @@ namespace Connection_to_database
                                 {
                                     Console.WriteLine(count);
                                     var item1 = list[0].ElementAt(count);
-                                    var item2 = list[1].ElementAt(count);
-                                    
-                                    this.chart1.Series["Amount"].Points.AddXY(item2, item1);
-                                    
+                                    var item2 = list[1].ElementAt(count);                                 
+                                    this.chart1.Series["Amount"].Points.AddXY(item2, item1);                                    
                                     count += 1;
                                 }
                             }
@@ -274,8 +270,7 @@ namespace Connection_to_database
                 Amount1.Visible = true;
                 keuze3.Items.Clear();
                 keuze3.Items.Add("Amount of pay methods");
-                keuze3.Items.Add("Amount of parking places");
-                
+                keuze3.Items.Add("Amount of parking places");             
             }
             if (selectedindex == "Amount of pay methods")
             {
@@ -283,17 +278,14 @@ namespace Connection_to_database
                 Amount1.Visible = true;
                 keuze3.Items.Clear();
                 keuze3.Items.Add("Amount of services");
-                keuze3.Items.Add("Amount of parking places");
-                
+                keuze3.Items.Add("Amount of parking places");             
             }
             if(selectedindex == "Amount of parking places")
             {
                 keuze3.Items.Clear();
                 keuze3.Items.Add("Amount of services");
-                keuze3.Items.Add("Amount of pay methods");
-                
-            }
-            
+                keuze3.Items.Add("Amount of pay methods");               
+            }        
         }
 
         private void keuze3_SelectedIndexChanged(object sender, EventArgs e)
@@ -307,8 +299,7 @@ namespace Connection_to_database
                 Amount2.Visible = true;
                 Keuze1.Items.Clear();
                 Keuze1.Items.Add("Amount of pay methods");
-                Keuze1.Items.Add("Amount of parking places");
-                
+                Keuze1.Items.Add("Amount of parking places");                
             }
             if (selectedindex == "Amount of pay methods")
             {
@@ -316,15 +307,13 @@ namespace Connection_to_database
                 Amount2.Visible = true;
                 Keuze1.Items.Clear();
                 Keuze1.Items.Add("Amount of services");
-                Keuze1.Items.Add("Amount of parking places");
-               
+                Keuze1.Items.Add("Amount of parking places");              
             }
             if (selectedindex == "Amount of parking places")
             {
                 Keuze1.Items.Clear();
                 Keuze1.Items.Add("Amount of services");
-                Keuze1.Items.Add("Amount of pay methods");
-                
+                Keuze1.Items.Add("Amount of pay methods");             
             }
         }
 
@@ -358,7 +347,9 @@ namespace Connection_to_database
                 StreetBox.Visible = true;
                 Search.Visible = true;
                 pictureBox3.Visible = false;
-                pictureBox4.Visible = false;                
+                pictureBox4.Visible = false;
+                pictureBox5.Visible = false;
+                pictureBox6.Visible = false;
             }
         }
 
@@ -366,15 +357,33 @@ namespace Connection_to_database
         {
             string selectedindex = Cap.SelectedItem.ToString();
             
-            if (selectedindex == "Most Capacity")
+            if (selectedindex == "0-200")
             {
                 pictureBox3.Visible = true;
                 pictureBox4.Visible = false;
+                pictureBox5.Visible = false;
+                pictureBox6.Visible = false;
             }
-            if (selectedindex == "Lowst Capacity")
+            if (selectedindex == "200-500")
             {
                 pictureBox4.Visible = true;
-                pictureBox3.Visible = false;               
+                pictureBox3.Visible = false;
+                pictureBox5.Visible = false;
+                pictureBox6.Visible = false;
+            }
+            if (selectedindex == "500-700")
+            {
+                pictureBox4.Visible = false;
+                pictureBox3.Visible = false;
+                pictureBox5.Visible = true;
+                pictureBox6.Visible = false;
+            }
+            if (selectedindex == "700 >")
+            {
+                pictureBox4.Visible = false;
+                pictureBox3.Visible = false;
+                pictureBox5.Visible = false;
+                pictureBox6.Visible = true;
             }
         }
 
